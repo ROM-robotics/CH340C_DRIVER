@@ -1,0 +1,1 @@
+cmd_/home/mr_robot/Desktop/CH341SER_LINUX/driver/Module.symvers :=  scripts/mod/modpost -m -a     -o /home/mr_robot/Desktop/CH341SER_LINUX/driver/Module.symvers -T /home/mr_robot/Desktop/CH341SER_LINUX/driver/modules.order -i Module.symvers -e 

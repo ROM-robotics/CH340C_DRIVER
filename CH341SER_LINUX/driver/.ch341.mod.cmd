@@ -1,0 +1,1 @@
+cmd_/home/mr_robot/Desktop/CH341SER_LINUX/driver/ch341.mod := printf '%s\n'   ch341.o | awk '!x[$$0]++ { print("/home/mr_robot/Desktop/CH341SER_LINUX/driver/"$$0) }' > /home/mr_robot/Desktop/CH341SER_LINUX/driver/ch341.mod

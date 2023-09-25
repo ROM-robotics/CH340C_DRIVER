@@ -1,0 +1,22 @@
+
+https://github.com/juliagoda/CH341SER
+
+https://blog.csdn.net/qq_28680277/article/details/129162559
+
+sudo apt install mokutil
+sudo apt install shim-signed
+sudo update-secureboot-policy --new-key
+
+openssl req -new -x509 -newkey rsa:2048 -keyout MOK.priv -outform DER -out MOK.der -nodes -days 36500 -subj "/CN=Descriptive name/"
+### /var/lib/shim-signed/mok/MOK.der နဲ့ MOK.priv ကို ဖျက်ပြီး လက်ရှိ directory ထဲကကောင်နှစ်ခုကို ကူးထည့်ပေးပါ။
+sudo mokutil --import /var/lib/shim-signed/mok/MOK.der
+
+reboot
+
+sudo /usr/src/linux-headers-$(uname -r)/scripts/sign-file sha256 /var/lib/shim-signed/mok/MOK.priv /var/lib/shim-signed/mok/MOK.der ch34x.ko
+hexdump -C ch341.ko | tail
+
+sudo make load
+sudo make install
+cd /lib/modules/$(uname -r)/kernel/drivers/usb/serial lsmod
+ဒါဆို device တပ်လိုက်ရင် /dev/ttyCH341USB0 ဆိုတာရပါပြီ။ 

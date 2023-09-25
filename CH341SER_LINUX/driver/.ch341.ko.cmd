@@ -1,0 +1,1 @@
+cmd_/home/mr_robot/Desktop/CH341SER_LINUX/driver/ch341.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/mr_robot/Desktop/CH341SER_LINUX/driver/ch341.ko /home/mr_robot/Desktop/CH341SER_LINUX/driver/ch341.o /home/mr_robot/Desktop/CH341SER_LINUX/driver/ch341.mod.o;  true
